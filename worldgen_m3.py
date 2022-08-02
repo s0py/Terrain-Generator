@@ -1,4 +1,3 @@
-import opensimplex
 import numpy as np
 import time
 from pathfinding.core.diagonal_movement import DiagonalMovement
@@ -81,13 +80,6 @@ def diamond_square(n, bias=False):
     #now it's between 0 and 1
 
     return arr
-
-def add_noise(x, y, N, r, s):
-    n = 0
-    for i in range(1, r+1):
-        n += opensimplex.noise2(x=x/(N/(i*s)), y=y/(N/(i*s)))/(2**i)
-    return n
-
 
 mapSize = 8
 N = 2**mapSize+1
