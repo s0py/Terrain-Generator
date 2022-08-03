@@ -1,8 +1,7 @@
+import matplotlib.colors
 import numpy as np
 import time
-from pathfinding.core.diagonal_movement import DiagonalMovement
-from pathfinding.core.grid import Grid
-from pathfinding.finder.a_star import AStarFinder
+import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 import tcod
@@ -415,7 +414,7 @@ for i in cityList:
 cityList = result.copy()
 
 #connect each city to its nth closest neighbor
-for n in range(1,5):
+for n in range(1,4):
     for j in range(len(cityList)):
         startCity = cityList[j]
         #cityIndexes = np.random.randint(0, len(cityList), 2)
@@ -441,8 +440,5 @@ print("generated roadMap\t\t{} sec".format(dt))
 
 np.savetxt("roadmap_m3.csv", roadMap, delimiter=",")
 
-# we're going to generate rivers
-# this will take the most computer time
-# make a riverMap of zeros
-
 print("done")
+
